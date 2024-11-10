@@ -7,13 +7,13 @@ import Card from '@/components/molecules/Card';
 import { cn } from '@/lib/utils';
 import MoneyIcon from '@/assets/svg/money.svg';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import { useWindowSize } from 'react-use';
 
 interface PeopleCarousalProps {
   className?: string;
+  peoples: { label: string; tags: string[] }[];
 }
 
-function PeopleCarousal({ className }: PeopleCarousalProps) {
+function PeopleCarousal({ className, peoples }: PeopleCarousalProps) {
   const ref = useRef<StackedCarousel | undefined>();
 
   return (
@@ -31,10 +31,10 @@ function PeopleCarousal({ className }: PeopleCarousalProps) {
         render={(parentWidth, carouselRef) => (
           <StackedCarousel
             ref={carouselRef}
-            slideComponent={Card}
+            slideComponent={({ data, dataIndex }) => <Card people={data[dataIndex]} />}
             slideWidth={parentWidth < 500 ? parentWidth * 0.6 : parentWidth * 0.5}
             carouselWidth={parentWidth}
-            data={[1, 2, 3]}
+            data={peoples}
             currentVisibleSlide={3}
             maxVisibleSlide={3}
             useGrabCursor
