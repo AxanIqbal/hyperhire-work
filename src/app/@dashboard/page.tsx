@@ -7,9 +7,8 @@ import PeopleCarousal from '@/components/organisms/PeopleCarousal';
 import FeatureCarousal from '@/components/organisms/FeatureCarousal';
 
 async function DashboardPage() {
-  const peoples = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/api/people`).then(
-    (res) => res.json(),
-    () => undefined,
+  const peoples = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/api/people`).then((res) =>
+    res.json(),
   );
 
   return (
@@ -42,7 +41,7 @@ async function DashboardPage() {
             <Offers className={'mt-[60px] hidden md:flex animate-fadeIn'} />
           </div>
 
-          {peoples ? <PeopleCarousal peoples={peoples} className={'flex-1'} /> : <div className={'flex-1'} />}
+          <PeopleCarousal peoples={peoples} className={'flex-1'} />
         </div>
 
         <FeatureCarousal className={' max-w-screen-xl mt-[60px] animate-fadeIn'} />
