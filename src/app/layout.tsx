@@ -15,12 +15,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  dashboard,
 }: Readonly<{
   children: React.ReactNode;
+  dashboard: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={`antialiased`}>
+        {dashboard}
         {children}
         <Footer />
       </body>
