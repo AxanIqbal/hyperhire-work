@@ -11,14 +11,16 @@ import {
 
 function Header() {
   return (
-    <header className={'h-[60px] flex justify-between items-center px-[16px] max-w-screen-lg mx-auto'}>
+    <header className={'h-[60px] flex justify-between items-center px-[16px] max-w-screen-xl mx-auto'}>
       <Logo />
 
       <div className={'hidden md:flex gap-[60px] items-center'}>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className={'text-white font-[900] text-[16px]'}>채용</NavigationMenuTrigger>
+              <NavigationMenuTrigger className={'!bg-transparent text-white font-black text-[16px]'}>
+                채용
+              </NavigationMenuTrigger>
               <NavigationMenuContent className={'flex-col'}>
                 <h4 className={'font-[700] w-[240px] my-[11px] mx-[16px]'}>채용</h4>
                 <NavigationMenuLink className={'block my-[10px] font-[500] mx-[16px]'}>
@@ -35,10 +37,10 @@ function Header() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <h5 className={'font-[900] text-[16px] text-white'}>해외 개발자 활용 서비스</h5>
+        <h5 className={'font-black text-[16px] text-white'}>해외 개발자 활용 서비스</h5>
       </div>
 
-      <button className={'bg-white hidden md:block font-[900] px-[24px] py-[6px] rounded-[8px] text-[#4A77FF]'}>
+      <button className={'bg-white hidden md:block font-black px-[24px] py-[6px] rounded-[8px] text-[#4A77FF]'}>
         문의하기
       </button>
     </header>
